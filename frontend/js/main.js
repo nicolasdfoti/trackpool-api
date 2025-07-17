@@ -23,7 +23,7 @@ form.addEventListener("submit", async (event) => {
     console.log(formData);
 
     try {
-        const response = await fetch("http://localhost:3000/loads", {
+        const response = await fetch("https://trackpool-api.onrender.com/loads", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
