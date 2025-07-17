@@ -20,9 +20,8 @@ form.addEventListener("submit", async (event) => {
         "additional": userAdditional
     }
 
-    console.log(formData);
-
     try {
+
         const response = await fetch("https://trackpool-api.onrender.com/loads", {
             method: "POST",
             headers: {
@@ -31,8 +30,12 @@ form.addEventListener("submit", async (event) => {
             body: JSON.stringify(formData)
         });
 
-        const result = await response.json();
-        console.log("Saved:", result);
+        if (response.status === 204) {
+            console.log("Saved successfully!");
+        } else {
+            const result = await response.json();
+            console.error("Unexpected response:", result);
+        }
 
     } catch (error) {
         console.error("Error:", error);
