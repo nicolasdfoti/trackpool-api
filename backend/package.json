@@ -1,0 +1,27 @@
+{
+  "name": "activities",
+  "version": "1.0.0",
+  "description": "This is my loads API (activity)",
+  "license": "ISC",
+  "author": "Nicolás Foti",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "swagger": "node swagger.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "mongoose": "^8.16.3",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

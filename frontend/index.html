@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script defer src="js/main.js"></script>
+        <link rel="stylesheet" href="styles/styles.css">
+        <title>Trackpool</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Trackpool</h1>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="requests.html">Requests</a>
+                <a href="about.html">About Us</a>
+            </nav>
+        </header>
+
+        <main>
+            <form id="dashboard-form">
+                <fieldset>
+                    <legend>Fill with your contact info to subscribe</legend>
+                </fieldset>
+                            
+                <fieldset>
+                    <label>Enter your name here: <input type="text" id="dashboard-name" name="name"></label>
+                </fieldset>
+
+                <fieldset>
+                    <label>Enter your email here: <input type="email" id="dashboard-email" name="email"></label>
+                </fieldset>
+
+                <fieldset>
+                    <label>Please select a plan:
+                        <select name="subject" id="dashboard-select" required>
+                            <option value="" disabled selected>Please select an option</option>
+                            <option value="basic">Basic</option>
+                            <option value="premium">Premium</option>
+                            <option value="deluxe">Deluxe</option>
+                        </select>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <label>Enter the desired delivery date: <input type="date" id="dashboard-date" name="delivery"></label>
+                </fieldset>
+
+                <fieldset>     
+                    <label for="textarea">Enter the package: </label> 
+                    <textarea name="textarea" id="dashboard-textarea" required placeholder="Describe the package here..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <label>Select an optional benefit:
+                        <select name="additional" id="dashboard-additional">
+                            <option value="option" disabled selected>Please select an option:</option>
+                            <option value="none">None</option>
+                            <option value="express">Express Shipping</option>
+                            <option value="refrigerated">Refrigerated Transport</option>
+                            <option value="insurance">Cargo Insurance</option>
+                            <option value="shared">Shared Cargo</option>
+                            <option value="advisor">Logistic Advisor</option>
+                            <option value="storage">Temporary Storage</option>
+                        </select>
+                    </label>
+                </fieldset>
+
+                <button type="submit" id="dashboard-submit">Decision made!</button>
+
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; Trackpool</p>
+            <p>2025</p>
+        </footer>
+    </body>
+</html>
