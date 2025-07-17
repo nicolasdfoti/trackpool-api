@@ -5,8 +5,8 @@ const doc = {
         title: "Trackpool API",
         description: "This is an API designed to help companies move their loads"
     },
-    host: "localhost:3000",
-    schemes: ["http"]
+    host: "trackpool-api.onrender.com",
+    schemes: ["https"]
 };
 
 const outputFile = "./swagger.json";
