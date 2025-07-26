@@ -4,6 +4,7 @@ const userRoute = require("./user.js");
 const infoRoute = require("./requests.js")
 const swaggerRoute = require("./swagger.js")
 const path = require("path");
+const passport = require("passport");
 
 router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../../frontend/index.html"));
@@ -13,5 +14,17 @@ router.use("/information", infoRoute);
 router.use("/loads", loadsRoute);
 router.use("/user", userRoute);
 router.use("/trackpool-doc", swaggerRoute);
+
+// login routes
+router.get("/login", passport.authenticate("github"), (req, res) => { scope: ['user:email'] });
+
+router.get("/logout", function(req, res, next) {
+    req.logOut(function(err) {
+        if (err) {
+            return next(err)
+        }
+        res.redirect("/");
+    })
+})
 
 module.exports = router;
