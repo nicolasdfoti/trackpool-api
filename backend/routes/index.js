@@ -19,7 +19,7 @@ router.use("/trackpool-doc", swaggerRoute);
 router.get(
   "/login",
   (req, res, next) => {
-    console.log("➡️  /login ");
+    console.log("/login");
     next();
   },
   passport.authenticate("github")
@@ -29,7 +29,7 @@ router.get(
   "/github/callback",
   passport.authenticate("github", { failureRedirect: "/trackpool-doc" }),
   (req, res) => {
-    console.log("✅  GitHub callback reached. User: ", req.user && req.user.username);
+    console.log("GitHub callback reached. User: ", req.user && req.user.username);
     req.session.user = req.user;
     res.redirect("/");
   }
