@@ -33,9 +33,6 @@ const PORT = process.env.PORT || 3000;
 // static resources
 app.use(express.static(path.join(__dirname, "../frontend")));
 
-// routes
-app.use(routes);
-
 // middleware
 passport.use(new GitHubStrategy({
 
@@ -56,6 +53,9 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((user, done) => {
     done(null, user);
 });
+
+// routes
+app.use(routes);
 
 // app listening to port
 mongodb.initDb((err) => {

@@ -16,14 +16,24 @@ router.use("/user", userRoute);
 router.use("/trackpool-doc", swaggerRoute);
 
 // login routes
-router.get("/github/callback", passport.authenticate('github', {
-    failureRedirect: "/trackpool-doc"
-}), (req, res) => {
+router.get(
+  "/login",
+  (req, res, next) => {
+    console.log("➡️  /login ");
+    next();
+  },
+  passport.authenticate("github")
+);
+
+router.get(
+  "/github/callback",
+  passport.authenticate("github", { failureRedirect: "/trackpool-doc" }),
+  (req, res) => {
+    console.log("✅  GitHub callback reached. User: ", req.user && req.user.username);
     req.session.user = req.user;
     res.redirect("/");
-});
-
-router.get("/login", passport.authenticate("github"), (req, res) => {});
+  }
+);
 
 router.get("/logout", function(req, res, next) {
     req.logOut(function(err) {
