@@ -16,7 +16,7 @@ router.use("/user", userRoute);
 router.use("/trackpool-doc", swaggerRoute);
 
 // login routes
-router.get("/login", passport.authenticate("github"), (req, res) => { scope: ['user:email'] });
+router.get("/login", passport.authenticate("github"), (req, res) => {});
 
 router.get("/logout", function(req, res, next) {
     req.logOut(function(err) {

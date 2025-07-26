@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // port
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // static resources
 app.use(express.static(path.join(__dirname, "../frontend")));
